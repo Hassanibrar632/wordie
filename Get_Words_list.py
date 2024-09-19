@@ -39,10 +39,11 @@ def process_input(l1, l2, l3, l4, l5, yellow, black):
     word = [l1, l2, l3, l4, l5]
     pair = []
     for i, l in enumerate(word):
-        try:
-            int(l)
-        except:
-            pair.append([l.lower(), i])
+        if len(l) != 0:
+            try:
+                int(l)
+            except:
+                pair.append([l.lower(), i])
     gusser.fix_pos(pair)
     
     gusser.found_letter(yellow)
